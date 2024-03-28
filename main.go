@@ -69,7 +69,7 @@ func main() {
 		defer sshconn.Close()
 	} else {
 		connectDBBasic()
-		db.Close()
+		defer db.Close()
 	}
 
 	yesterday := time.Now().AddDate(0, 0, -2)
